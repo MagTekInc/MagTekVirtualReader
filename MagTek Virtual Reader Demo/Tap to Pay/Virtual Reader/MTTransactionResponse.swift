@@ -1,5 +1,5 @@
 //
-//  Created by MagTek on 8/19/25.
+//  Created by Bayram Mete on 8/19/25.
 //  Copyright © 2025 MagTek, Inc. All rights reserved.
 //
 
@@ -12,7 +12,7 @@ struct MTNewTransactionResponse: Codable {
     let customerTransactionID: String?
     let transactionUTCTimeStamp: String?
     let transactionOutput: MTNewTransactionOutput?
-    let additionalResponseData: String?
+    let additionalResponseData: [MTKeyValue]?
 }
 
 struct MTNewDataOutput: Codable {
@@ -65,6 +65,7 @@ struct MTNewProcessorNormalizedResponse: Codable {
     let authCode: String?
     let hostResponseCode: String?
     let taskID: String?
+    let transactionID: String?
     let transactionAmount: String?
     let processedAmount: String?
     let totalAmount: String?
@@ -76,6 +77,9 @@ struct MTNewProcessorNormalizedResponse: Codable {
     let merchantReceipt: String?
     let emvIssuerScripts: String?
     let emvIssuerAuthenticationData: String?
+    let AL: String?
+    let TVR: String?
+    let BIN: String?
 }
 
 struct MTSaleResponse: Codable {

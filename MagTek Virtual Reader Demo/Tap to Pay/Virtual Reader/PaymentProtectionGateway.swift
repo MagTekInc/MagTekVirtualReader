@@ -1,5 +1,5 @@
 //
-//  Created by MagTek on 4/20/25.
+//  Created by Thien Vu on 4/20/25.
 //  Copyright © 2025 MagTek, Inc. All rights reserved.
 //
 
@@ -317,13 +317,15 @@ enum JetPayResponse {
 final class PaymentGatewayServiceAPI {
     private var username: String
     private var password: String
+    private let baseURL: String
 
     @Published private var transactionState = "Ready"
     @Published private var lastTransactionApproved: Bool? = nil
     
-    init(userName: String, password: String) {
+    init(userName: String, password: String, baseURL: String) {
         self.username = userName
         self.password = password
+        self.baseURL = baseURL
     }
     
     func newPaymentRequest(model: MTPaymentRequest) async throws -> MTNewTransactionResponse? {
@@ -332,6 +334,7 @@ final class PaymentGatewayServiceAPI {
         
         do {
             let endpoint = MTAPIEndpoint.postProcessApplePayment(
+                baseURL: baseURL,
                 body: transactionRequest,
                 username: username,
                 password: password
@@ -374,7 +377,7 @@ final class PaymentGatewayServiceAPI {
     
     // TransactionRequest prepare
     func buildTransactionRequest(from model: MTPaymentRequest) -> PPGTransactionRequest {
-        // Prepare encrypted data
+
         let encryptedData = PPGEncryptedData(
             dataType: "AppleTapToPay",
             data: model.paymentCardData,

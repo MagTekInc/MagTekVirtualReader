@@ -1,5 +1,5 @@
 //
-//  Created by MagTek on 4/20/25.
+//  Created by Thien Vu on 4/20/25.
 //  Copyright © 2025 MagTek, Inc. All rights reserved.
 //
 
@@ -15,6 +15,12 @@ struct MTVirtualReaderDemoView: View {
     @State var startTime = DispatchTime.now()
     @State var bMeasureRelinkAccountTime = false
     @State var apiTestResult = ""
+
+    // Store & Forward verification test entry-point.
+    @State private var showSAFTestView = false
+
+    // Credentials sheet. Presented automatically at launch and via "Update Credentials".
+    @State private var showCredentialsView = false
     
     init(model: MTViewModel) {
         mtViewModel = model
@@ -33,6 +39,16 @@ struct MTVirtualReaderDemoView: View {
                         Form {
                             Section {
                                 DisclosureGroup("CONFIGURATION", isExpanded: $setupExpanded) {
+                                    HStack {
+                                        Button(action: {
+                                            showCredentialsView = true
+                                        }, label: {
+                                            Label("Update Credentials", systemImage: "key")
+                                                .font(.headline)
+                                                .frame(maxWidth: .infinity, alignment: .leading)
+                                        })
+                                    }
+
                                     HStack {
                                         Button(action: {
                                             Task {
@@ -88,7 +104,36 @@ struct MTVirtualReaderDemoView: View {
                                                 .frame(maxWidth: .infinity, alignment: .leading)
                                         })
                                     }
-                                    
+
+                                    if #available(iOS 18.4, *) {
+                                        HStack {
+                                            Button(action: {
+                                                showSAFTestView = true
+                                            }, label: {
+                                                Label("Offline Mode", systemImage: "tray.full")
+                                                    .font(.headline)
+                                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                            })
+                                        }
+                                        .fullScreenCover(isPresented: $showSAFTestView) {
+                                            if let tester = mtViewModel.makeStoreAndForwardTester() {
+                                                MTStoreAndForwardTestView(viewModel: mtViewModel, tester: tester)
+                                            } else {
+                                                VStack(spacing: 16) {
+                                                    Text("Reader not available")
+                                                        .font(.headline)
+                                                    Text("Tap \"Prepare Reader Session\" on the main screen first so the Store and Forward 24-hour prerequisite is satisfied, then reopen this test.")
+                                                        .font(.caption)
+                                                        .multilineTextAlignment(.center)
+                                                        .padding(.horizontal)
+                                                    Button("Close") { showSAFTestView = false }
+                                                        .buttonStyle(.borderedProminent)
+                                                }
+                                                .padding()
+                                            }
+                                        }
+                                    }
+
                                     HStack {
                                         Button(action: {
                                             showLogView = true
@@ -130,6 +175,7 @@ struct MTVirtualReaderDemoView: View {
                                     }
                                     .foregroundColor(.blue)
                                 }
+                                
                                 HStack(alignment: .firstTextBaseline) {
                                     MTAmountInputView(model: mtViewModel)
                                         .onTapGesture { }
@@ -158,18 +204,16 @@ struct MTVirtualReaderDemoView: View {
                                         .padding(.top, 2)
                                         
                                         if mtViewModel.isProcessingPayment {
-                                            Color.black.opacity(0.9)
-                                                .edgesIgnoringSafeArea(.all)
                                             VStack(spacing: 16) {
                                                 ProgressView()
                                                     .progressViewStyle(CircularProgressViewStyle(tint: .white))
                                                     .scaleEffect(1.5)
                                                 Text("Authorizing Transaction")
-                                                    .foregroundColor(.orange)
+                                                    .foregroundColor(.white)
                                                     .font(.headline)
                                             }
                                             .padding(24)
-                                            .background(Color.gray.opacity(0.8))
+                                            .background(Color.black)
                                             .cornerRadius(16)
                                             .shadow(radius: 10)
                                         }
@@ -230,15 +274,8 @@ struct MTVirtualReaderDemoView: View {
                                 Spacer()
                                 if !setupExpanded {
                                     Button(action: {
-                                        debugPrint("model.amountDecimal \(mtViewModel.amountDecimal)")
-                                        if mtViewModel.isCardReaderSessionActive {
-                                            debugPrint("ACTIVE SESSION pay model.amountDecimal \(mtViewModel.amountDecimal)")
-                                            mtViewModel.pay(mtViewModel.amountDecimal)
-                                        } else {
-                                            Task {
-                                                debugPrint("INACTIVE SESSION pay model.amountDecimal \(mtViewModel.amountDecimal)")
-                                                await mtViewModel.processTapToPayTransaction(mtViewModel.amountDecimal)
-                                            }
+                                        Task {
+                                            await mtViewModel.paySmart()
                                         }
                                     }, label: {
                                         if mtViewModel.isTapToPayAvailable {
@@ -321,6 +358,15 @@ struct MTVirtualReaderDemoView: View {
                             }
                         }
                     }
+                }
+            }
+            .sheet(isPresented: $showCredentialsView) {
+                MTCredentialsView(mtViewModel: mtViewModel)
+                    .presentationDetents([.medium, .large])
+            }
+            .onAppear {
+                if !mtViewModel.hasCredentials {
+                    showCredentialsView = true
                 }
             }
     }

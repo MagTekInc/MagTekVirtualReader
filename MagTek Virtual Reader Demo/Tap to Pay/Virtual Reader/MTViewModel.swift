@@ -1,40 +1,202 @@
 //
-//  Created by MagTek on 4/20/25.
+//  Created by Thien Vu on 4/20/25.
 //  Copyright © 2025 MagTek, Inc. All rights reserved.
 //
 
 import os
 import UIKit
+import Network
+import Security
 import ProximityReader
 import MagTekVirtualReader
+
+private struct MTSavedCredentials {
+    let userName: String
+    let password: String
+    let baseURL: String
+}
+
+private enum MTCredentialStoreError: LocalizedError {
+    case missingUserName
+    case missingPassword
+    case invalidPasswordEncoding
+    case readerUnavailable
+    case keychain(OSStatus)
+
+    var errorDescription: String? {
+        switch self {
+        case .missingUserName:
+            return "Enter a username."
+        case .missingPassword:
+            return "Enter a password."
+        case .invalidPasswordEncoding:
+            return "The password could not be encoded for secure storage."
+        case .readerUnavailable:
+            return "The Tap to Pay reader is not available."
+        case .keychain(let status):
+            let message = SecCopyErrorMessageString(status, nil) as String?
+            return message.map { "The password could not be saved: \($0)" }
+                ?? "The password could not be saved (Keychain status \(status))."
+        }
+    }
+}
+
+private enum MTCredentialStore {
+    private static let userNameKey = "mt.unigate.userName"
+    private static let baseURLKey = "mt.unigate.baseURL"
+    private static let passwordAccount = "UnigatePassword"
+    private static let service = (Bundle.main.bundleIdentifier ?? "com.magtek.VirtualReaderDemo")
+        + ".credentials"
+
+    static func load() -> MTSavedCredentials? {
+        let defaults = UserDefaults.standard
+        guard let userName = defaults.string(forKey: userNameKey),
+              !userName.isEmpty,
+              let savedBaseURL = defaults.string(forKey: baseURLKey),
+              let baseURL = try? MTUnigateURL.normalizedBaseURL(savedBaseURL),
+              let password = loadPassword(),
+              !password.isEmpty else {
+            return nil
+        }
+
+        return MTSavedCredentials(
+            userName: userName,
+            password: password,
+            baseURL: baseURL
+        )
+    }
+
+    static func save(userName: String, password: String, baseURL: String) throws {
+        let normalizedUserName = userName.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !normalizedUserName.isEmpty else {
+            throw MTCredentialStoreError.missingUserName
+        }
+        guard !password.isEmpty else {
+            throw MTCredentialStoreError.missingPassword
+        }
+        guard let passwordData = password.data(using: .utf8) else {
+            throw MTCredentialStoreError.invalidPasswordEncoding
+        }
+
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: service,
+            kSecAttrAccount as String: passwordAccount
+        ]
+        let values: [String: Any] = [
+            kSecValueData as String: passwordData,
+            kSecAttrAccessible as String: kSecAttrAccessibleWhenUnlockedThisDeviceOnly
+        ]
+
+        let updateStatus = SecItemUpdate(query as CFDictionary, values as CFDictionary)
+        if updateStatus == errSecItemNotFound {
+            var item = query
+            values.forEach { item[$0.key] = $0.value }
+            let addStatus = SecItemAdd(item as CFDictionary, nil)
+            guard addStatus == errSecSuccess else {
+                throw MTCredentialStoreError.keychain(addStatus)
+            }
+        } else if updateStatus != errSecSuccess {
+            throw MTCredentialStoreError.keychain(updateStatus)
+        }
+
+        let defaults = UserDefaults.standard
+        defaults.set(normalizedUserName, forKey: userNameKey)
+        defaults.set(baseURL, forKey: baseURLKey)
+    }
+
+    private static func loadPassword() -> String? {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: service,
+            kSecAttrAccount as String: passwordAccount,
+            kSecReturnData as String: true,
+            kSecMatchLimit as String: kSecMatchLimitOne
+        ]
+
+        var result: CFTypeRef?
+        guard SecItemCopyMatching(query as CFDictionary, &result) == errSecSuccess,
+              let data = result as? Data else {
+            return nil
+        }
+        return String(data: data, encoding: .utf8)
+    }
+}
 
 final class MTViewModel: MTReaderViewModel, @unchecked Sendable {
     @Published var logData = ""
     @Published var isProcessingPayment = false
     @Published var isCardReaderSessionActive = false
     @Published var reconfigureSession = false
+    // user toggle to allow SAF when offline
+    @Published var forceOfflineMode = false
+    // switch between using SAF delete token from EMV response or retrieve via API call
+    @Published var useEMVSAFTOKEN = true
+    @Published private(set) var isNetworkAvailable = true
+    @Published private(set) var lastStoreAndForwardTransactionID: String?
+    // Credential values entered by the user via the credentials sheet.
+    @Published var userName = MTViewModel.defaultUserName
+    @Published var password = MTViewModel.defaultPassword
+    @Published var configURL = MTViewModel.defaultURLString
+    static let defaultUserName = ""
+    static let defaultPassword = ""
+    @Published private(set) var hasCredentials = false
+    static let defaultURLString = MTUnigateURL.defaultBaseURL
     private var paymentData: PaymentCardReadResult?
     private var readError: PaymentCardReaderSession.ReadError?
     private var jwtTokenString = ""
-    private var mtVRConfig = MagTekVRConfig(userName: "", password: "", url: "", readerID: "")
+    private var mtVRConfig = MagTekVRConfig(userName: "", password: "", url: "", storeAndForwardURL: "", readerID: "")
     private var mtVRCardReader: MagTekVirtualCardReader?
+    private let pathMonitor = NWPathMonitor()
+    private let pathQueue = DispatchQueue(label: "com.magtek.virtualreader.network")
+    private static let lastStoreAndForwardTransactionIDKey = "mt.storeAndForward.lastTransactionID"
     static let msgTTPIsReady = "Tap to Pay Ready"
     let logger = MTLogManager.shared
     public var startTime = DispatchTime.now()
+
+    var baseURL: String {
+        configURL
+    }
     
     /// Creates a new proximity reader model object.
     override init() {
-        // ❌❌❌ IMPORTANT ❌❌❌ DO NOT HARD CODE CREDENTIALS IN PRODUCTION APP
-         mtVRConfig = MagTekVRConfig(userName: MTConstants.userName,
-                                           password: MTConstants.password,
-                                           url: MTConstants.magensaURL,
-                                           readerID: "")
-        mtVRCardReader = MagTekVirtualCardReader(config: mtVRConfig)
+        let savedCredentials = MTCredentialStore.load()
+        let initialUserName = savedCredentials?.userName ?? MTViewModel.defaultUserName
+        let initialPassword = savedCredentials?.password ?? MTViewModel.defaultPassword
+        let initialBaseURL = savedCredentials?.baseURL ?? MTViewModel.defaultURLString
 
+        userName = initialUserName
+        password = initialPassword
+        configURL = initialBaseURL
+
+        /// Saved values are the launch-time source of truth. The built-in values
+        /// are used only when this installation has not saved credentials yet.
+        mtVRConfig = MagTekVRConfig(
+            userName: initialUserName,
+            password: initialPassword,
+            url: MTUnigateURL.paymentCardReaderURL(for: initialBaseURL),
+            storeAndForwardURL: MTUnigateURL.storeAndForwardURL(for: initialBaseURL),
+            readerID: ""
+        )
+
+        mtVRCardReader = MagTekVirtualCardReader(config: mtVRConfig)
         
         logger.logDeviceInfo()
 
         super.init()
+
+        hasCredentials = !initialUserName.isEmpty
+            && !initialPassword.isEmpty
+            && !initialBaseURL.isEmpty
+
+        lastStoreAndForwardTransactionID = UserDefaults.standard.string(
+            forKey: Self.lastStoreAndForwardTransactionIDKey
+        )
+        startNetworkMonitor()
+    }
+    
+    deinit {
+        pathMonitor.cancel()
     }
     
     @MainActor
@@ -42,13 +204,16 @@ final class MTViewModel: MTReaderViewModel, @unchecked Sendable {
         guard isTapToPayAvailable else { return }
         
         if let rid = mtVRConfig.readerID, rid.isEmpty {
-            if let newReaderID = try? await mtVRCardReader?.getPaymentCardReaderIdentifier() {
-                logInfo("readerID: '\(newReaderID)'")
-                readerIdentifier = newReaderID
-                mtVRConfig.readerID = newReaderID
-                statusOK = true
-            } else {
-                logInfo("❌ readerID: failed getPaymentCardReaderIdentifier()")
+            do {
+                let newReaderID = try await mtVRCardReader?.getPaymentCardReaderIdentifier()
+                logInfo("readerID: '\(String(describing: newReaderID))'")
+                if let newReaderID {
+                    readerIdentifier = newReaderID
+                    mtVRConfig.readerID = newReaderID
+                    statusOK = true
+                }
+            } catch {
+                print("❌ readerID: failed getPaymentCardReaderIdentifier()")
             }
         } else {
             logInfo("❌ readerID: empty")
@@ -60,11 +225,27 @@ final class MTViewModel: MTReaderViewModel, @unchecked Sendable {
         Task {
             if let rid = mtVRConfig.readerID, !rid.isEmpty {
                 logInfo("readerID: '\(rid)'")
-                mtVRConfig = MagTekVRConfig(userName: "\(cfg.userName)", password: cfg.password, url: cfg.url, readerID: rid)
+                mtVRConfig = MagTekVRConfig(
+                    userName: "\(cfg.userName)",
+                    password: cfg.password,
+                    url: cfg.url,
+                    storeAndForwardURL: cfg.storeAndForwardURL.isEmpty
+                        ? MTUnigateURL.storeAndForwardURL(for: baseURL)
+                        : cfg.storeAndForwardURL,
+                    readerID: rid
+                )
             } else {
                 await setupReaderID()
                 logInfo("readerID: setupReaderID()")
-                mtVRConfig = MagTekVRConfig(userName: "\(cfg.userName)", password: cfg.password, url: cfg.url, readerID: readerIdentifier)
+                mtVRConfig = MagTekVRConfig(
+                    userName: "\(cfg.userName)",
+                    password: cfg.password,
+                    url: cfg.url,
+                    storeAndForwardURL: cfg.storeAndForwardURL.isEmpty
+                        ? MTUnigateURL.storeAndForwardURL(for: baseURL)
+                        : cfg.storeAndForwardURL,
+                    readerID: readerIdentifier
+                )
             }
             
             try? mtVRCardReader?.setConfiguration(mtVRConfig)
@@ -72,7 +253,100 @@ final class MTViewModel: MTReaderViewModel, @unchecked Sendable {
         }
     }
     
+    /// Applies user-supplied credentials from the credentials sheet, reconfigures
+    /// the underlying reader with the new values, and prepares the reader session
+    /// so the device is ready for Tap to Pay payments.
+    @MainActor
+    func applyCredentials(userName: String, password: String, baseURL: String) async throws {
+        let normalizedBaseURL = try MTUnigateURL.normalizedBaseURL(baseURL)
+        let normalizedUserName = userName.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !normalizedUserName.isEmpty else {
+            throw MTCredentialStoreError.missingUserName
+        }
+        guard !password.isEmpty else {
+            throw MTCredentialStoreError.missingPassword
+        }
+        guard let reader = mtVRCardReader else {
+            throw MTCredentialStoreError.readerUnavailable
+        }
+
+        // Ensure the candidate configuration has a reader identifier before it
+        // is installed. Save must not dismiss while the reader still has the old
+        // (possibly blank) hard-coded credentials.
+        if mtVRConfig.readerID?.isEmpty != false {
+            await setupReaderID()
+        }
+
+        let previousConfig = mtVRConfig
+        let previousToken = jwtTokenString
+        let previousSessionActive = isCardReaderSessionActive
+        let resolvedReaderID = mtVRConfig.readerID?.isEmpty == false
+            ? mtVRConfig.readerID
+            : readerIdentifier
+        let candidateConfig = MagTekVRConfig(
+            userName: normalizedUserName,
+            password: password,
+            url: MTUnigateURL.paymentCardReaderURL(for: normalizedBaseURL),
+            storeAndForwardURL: MTUnigateURL.storeAndForwardURL(for: normalizedBaseURL),
+            readerID: resolvedReaderID
+        )
+
+        status = "Preparing"
+        statusOK = false
+        isCardReaderSessionActive = false
+
+        do {
+            try reader.setConfiguration(candidateConfig)
+
+            // Fetching the token verifies that this exact username, password,
+            // and environment are valid before they are persisted or the sheet
+            // is dismissed.
+            let token = try await reader.fetchPaymentCardReaderTokenFromMagensaPSP(
+                candidateConfig
+            )
+            if try await !reader.isMerchantAccountLinked() {
+                try await reader.linkMerchantAccountWithToken(token)
+            }
+            try await reader.preparePaymentCardReaderSessionWithToken(token)
+
+            try MTCredentialStore.save(
+                userName: normalizedUserName,
+                password: password,
+                baseURL: normalizedBaseURL
+            )
+
+            mtVRConfig = candidateConfig
+            jwtTokenString = token
+            self.userName = normalizedUserName
+            self.password = password
+            configURL = normalizedBaseURL
+            hasCredentials = true
+            reconfigureSession = false
+            isCardReaderSessionActive = true
+            status = MTViewModel.msgTTPIsReady
+            statusOK = true
+        } catch {
+            try? reader.setConfiguration(previousConfig)
+            mtVRConfig = previousConfig
+            jwtTokenString = previousToken
+            isCardReaderSessionActive = previousSessionActive
+            status = error.localizedDescription
+            statusOK = false
+            throw error
+        }
+    }
+    
     func reconfigureCardReaderSession() async {
+        // Skip online reconfigure when we're intentionally offline / SAF mode
+        // or when the device has no network. Avoids token fetch errors while offline.
+        guard isNetworkAvailable, !forceOfflineMode else {
+            DispatchQueue.main.async {
+                self.reconfigureSession = false
+            }
+            logInfo("skip reconfigureCardReaderSession: offline or SAF mode")
+            return
+        }
+        
         await fetchToken()
         await preparePaymentCardReaderSessionWithToken()
         
@@ -185,6 +459,38 @@ final class MTViewModel: MTReaderViewModel, @unchecked Sendable {
         }
         
         return magTekVirtualCardReader.isTapToPaySupported()
+    }
+    
+    // Unified pay entry point for UI. Chooses online vs SAF when truly offline.
+    @MainActor
+    func paySmart() async {
+        guard isTapToPayAvailable else {
+            status = "This device does not support Tap to Pay"
+            statusOK = false
+            return
+        }
+        
+        let amount = amountDecimal
+        let paymentType: PaymentTransactionType = transactionTypePicker == .refund ? .refund : .purchase
+        
+        // Online path
+        if isNetworkAvailable {
+            if isCardReaderSessionActive {
+                pay(amount)
+            } else {
+                await processTapToPayTransaction(amount)
+            }
+            return
+        }
+        
+        // Offline path
+        if forceOfflineMode {
+            await payStoreAndForward(amount: amount, paymentType: paymentType)
+        } else {
+            status = "Offline: network unavailable"
+            statusOK = false
+            logError("Offline and offline mode disabled; cannot process.")
+        }
     }
     
     /// Fetch JWT Token
@@ -642,14 +948,19 @@ final class MTViewModel: MTReaderViewModel, @unchecked Sendable {
                                 guard
                                     let response = newTransactionResponse,
                                     let transactionOutput = response.transactionOutput,
-                                    let isTrxApproved = transactionOutput.isTransactionApproved,
-                                    let authorizedAmount = transactionOutput.authorizedAmount
+                                    let isTrxApproved = transactionOutput.isTransactionApproved
                                 else {
                                     debugPrint("Missing required fields in response")
                                     return
                                 }
                                 
                                 if isTrxApproved {
+                                    guard
+                                        let authorizedAmount = transactionOutput.authorizedAmount
+                                    else {
+                                        debugPrint("authorizedAmountMissing")
+                                        return
+                                    }
                                     if authorizedAmount < requestAmount {
                                         self.currentAuthResult = ("PARTIALLY APPROVED", authorizedAmount, transactionId)
                                         self.status = MTViewModel.msgTTPIsReady
@@ -700,8 +1011,37 @@ final class MTViewModel: MTReaderViewModel, @unchecked Sendable {
         trxResult = ""
         formattedVasResultString = ""
         apiTestStatus = ""
-        
+
         debugPrint("clearTransactionResult:statusOK = \(self.statusOK)")
+    }
+
+    // Factory for the Store and Forward verification tester.
+    // Returns nil if the SDK reader is not present yet — caller must run the online prepare flow first
+    // so the 24-hour storeAndForwardNotAllowed prerequisite is satisfied.
+    // Gated on iOS 18.4 because Apple's Store and Forward API is iOS 18.4+ even though the app
+    // target deploys to iOS 17.0.
+    @available(iOS 18.4, *)
+    @MainActor
+    func makeStoreAndForwardTester() -> MTStoreAndForwardTester? {
+        guard let reader = mtVRCardReader else { return nil }
+        return MTStoreAndForwardTester(
+            mtReader: reader,
+            config: mtVRConfig,
+            baseURL: baseURL
+        )
+    }
+
+    // Read-only accessor for the last PaymentCardReadResult captured by the online pay() flow.
+    // Specifically exposes the two encrypted blobs that get POSTed to Magensa for processing.
+    // Useful for the S&F test view's diagnostic affordance — lets us compare the online-captured
+    // payload shape against a SAF-stored payload shape when debugging gateway 500s.
+    // Returns nil if no online Pay transaction has been run in this app session.
+    var currentOnlinePaymentCardData: String? {
+        paymentData?.paymentCardData
+    }
+
+    var currentOnlineGeneralCardData: String? {
+        paymentData?.generalCardData
     }
     
     func reportSessionEvent(_ eventName: String) {
@@ -721,6 +1061,65 @@ final class MTViewModel: MTReaderViewModel, @unchecked Sendable {
         """
         
         return errorMessage
+    }
+    
+    private func startNetworkMonitor() {
+        pathMonitor.pathUpdateHandler = { [weak self] path in
+            DispatchQueue.main.async {
+                self?.isNetworkAvailable = (path.status == .satisfied)
+            }
+        }
+        pathMonitor.start(queue: pathQueue)
+        isNetworkAvailable = pathMonitor.currentPath.status == .satisfied
+    }
+
+    private func persistStoreAndForwardTransactionID(_ id: String) {
+        let normalized = id.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !normalized.isEmpty else { return }
+        lastStoreAndForwardTransactionID = normalized
+        UserDefaults.standard.set(normalized, forKey: Self.lastStoreAndForwardTransactionIDKey)
+    }
+    
+    @MainActor
+    private func payStoreAndForward(amount: Decimal, paymentType: PaymentTransactionType) async {
+        guard let reader = mtVRCardReader else {
+            logError("magTekVirtualCardReader is nil.")
+            return
+        }
+        
+        guard #available(iOS 18.4, *) else {
+            status = "Offline capture requires iOS 18.4+"
+            statusOK = false
+            return
+        }
+        
+        isProcessingPayment = true
+        status = "Preparing offline capture"
+        statusOK = false
+        
+        do {
+            let result = try await reader.readContactlessPaymentCardStoreAndForward(
+                for: amount,
+                currencyCode: "USD",
+                transactionType: paymentType
+            )
+            
+            var pendingSuffix = ""
+            if let count = try? await reader.numberOfStoredTransaction() {
+                pendingSuffix = " (\(count) stored)"
+            }
+            
+            status = "Stored offline\(pendingSuffix)"
+            statusOK = true
+            trxStatus = "Stored Offline"
+            trxResult = "Transaction \(result.id) stored for forwarding later."
+            trxShow = true
+            persistStoreAndForwardTransactionID(result.id)
+        } catch {
+            handlePaymentCardReaderError(error, callingFunc: #function)
+        }
+        
+        isProcessingPayment = false
     }
     
     // MARK: - Error handler functions
@@ -911,7 +1310,11 @@ final class MTViewModel: MTReaderViewModel, @unchecked Sendable {
                                    paymentCardData: String,
                                    generalCardData: String) async -> MTNewTransactionResponse? {
         
-        let UnigateClient = await PaymentGatewayServiceAPI(userName: mtVRConfig.userName, password:mtVRConfig.password)
+        let UnigateClient = await PaymentGatewayServiceAPI(
+            userName: mtVRConfig.userName,
+            password: mtVRConfig.password,
+            baseURL: baseURL
+        )
         
         do {
             logger.info("Initiating Magensa API call...")
@@ -926,6 +1329,7 @@ final class MTViewModel: MTReaderViewModel, @unchecked Sendable {
                                                  processorName: selectedPaymentProcessor,
                                                  paymentCardData: paymentCardData,
                                                  generalCardData: generalCardData)
+            
             let response = try await UnigateClient.newPaymentRequest(model: paymentRequest)
             
             logger.info("Magensa API call finished successfully!")

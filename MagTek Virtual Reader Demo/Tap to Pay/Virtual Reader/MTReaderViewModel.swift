@@ -1,5 +1,5 @@
 //
-//  Created by MagTekon 4/20/25.
+//  Created by Thien Vu on 4/20/25.
 //  Copyright © 2025 MagTek, Inc. All rights reserved.
 //
 
@@ -56,7 +56,7 @@ class MTReaderViewModel: ObservableObject, Identifiable {
     @Published var status = "Not Ready"
     @Published var info = ""
     @Published var transactionTypePicker = MTTransactionType.sale
-    @Published var paymentProcessorPicker = MTPaymentProcessor.TSYSPilot
+    @Published var paymentProcessorPicker = MTPaymentProcessor.RapidConnectV3
     @Published var readerID = ""
     @Published var statusOK = false
     @Published var trxShow = false

@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
 // swift-module-flags: -target arm64-apple-ios17.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name MagTekVirtualReader
-// swift-module-flags-ignorable:  -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import Combine
 import Foundation
 import ProximityReader
@@ -16,6 +16,7 @@ public enum SDKError : Swift.Error, Swift.Sendable {
   case encoding(MagTekVirtualReader.eEncodingError)
   case decoding(MagTekVirtualReader.eDecodingError)
   case read(MagTekVirtualReader.eCardReadError)
+  case storeAndForward(MagTekVirtualReader.eStoreAndForwardError)
   case unknown(message: Swift.String, underlying: (any Swift.Error)?)
   public var localizedDescription: Swift.String {
     get
@@ -63,6 +64,22 @@ public enum eCardReadError : Swift.Error, Swift.Sendable {
     get
   }
 }
+public enum eStoreAndForwardError : Swift.Error, Swift.Sendable {
+  case featureNotAvailable
+  case noActiveSession
+  case sessionNotReady
+  case storeUnavailable
+  case invalidBatch
+  case processingCancelled
+  public var localizedDescription: Swift.String {
+    get
+  }
+  public static func == (a: MagTekVirtualReader.eStoreAndForwardError, b: MagTekVirtualReader.eStoreAndForwardError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 public struct MagTekSDKError : Swift.Error, Swift.CustomStringConvertible {
   public enum Code : Swift.Int {
     case unknown
@@ -71,7 +88,15 @@ public struct MagTekSDKError : Swift.Error, Swift.CustomStringConvertible {
     case unauthorized
     case timeout
     case deviceNotSupported
+    case storeAndForwardNotAvailable
+    case storeAndForwardNoActiveSession
+    case storeAndForwardSessionNotReady
+    case storeAndForwardStoreUnavailable
+    case storeAndForwardInvalidBatch
+    case storeAndForwardProcessingCancelled
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -89,14 +114,18 @@ public struct MagTekSDKError : Swift.Error, Swift.CustomStringConvertible {
   public var description: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(code: MagTekVirtualReader.MagTekSDKError.Code, reasonKey: Swift.String, underlyingError: (any Swift.Error)? = nil, file: Swift.String = #file, function: Swift.String = #function, line: Swift.Int = #line)
+  #endif
 }
 public struct MagTekTokenRequestError : Foundation.LocalizedError {
   public let errorMessage: Swift.String
   public let failureReason: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public var description: Swift.String? {
     get
   }
+  #endif
 }
 public struct MagTekJWTConfiguration {
   public var userName: Swift.String
@@ -104,34 +133,54 @@ public struct MagTekJWTConfiguration {
   public var url: Swift.String
   public var readerID: Swift.String
   public init(userName: Swift.String, password: Swift.String, url: Swift.String, readerId: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   public mutating func setConfiguration(userName: Swift.String, password: Swift.String, url: Swift.String, readerID: Swift.String?)
+  #endif
   public func validate() throws
 }
 public class MagTekVirtualCardReader {
+  #if compiler(>=5.3) && $NonescapableTypes
   public var paymentCardReader: ProximityReader.PaymentCardReader? {
     get
   }
+  #endif
   public var cardReaderID: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public var events: _Concurrency.AsyncStream<ProximityReader.PaymentCardReader.Event>? {
     get
   }
+  #endif
   public var updateCardReaderSessionIfExpired: Swift.Bool
   public static func getSDKVersion() -> Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func enableLogger(_ enabled: Swift.Bool, _ logHandler: ((_ log: Swift.String) -> Swift.Void)? = nil)
-  public init(config: MagTekVirtualReader.MagTekVRConfig)
+  #endif
+  public init(config: MagTekVirtualReader.MagTekVRConfig, returnReadResultImmediately: Swift.Bool = false)
   public func getPaymentCardReaderEvents() -> _Concurrency.AsyncStream<ProximityReader.PaymentCardReader.Event>
   public func isTapToPaySupported() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getPaymentCardReaderIdentifier() async throws -> Swift.String?
+  #endif
   @available(iOS 17, *)
   public func isMerchantAccountLinked(token: Swift.String) async throws -> Swift.Bool
   @available(iOS 17, *)
   public func isMerchantAccountLinked() async throws -> Swift.Bool
   public func linkMerchantAccount() async throws
   public func linkMerchantAccountWithToken(_ tokenString: Swift.String) async throws
+  #if compiler(>=5.3) && $NonescapableTypes
   public func fetchPaymentCardReaderTokenFromMagensaPSP(_ config: MagTekVirtualReader.MagTekVRConfig, terminalProfileId: Swift.String? = nil, duration: Swift.Int? = nil) async throws -> Swift.String
+  #endif
   public func setConfiguration(_ config: MagTekVirtualReader.MagTekVRConfig) throws
   public func isTokenExpired() async -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func paymentCardReaderTokenExpirationDate() -> Foundation.Date?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func paymentCardReaderTokenSecondsRemaining() -> Foundation.TimeInterval?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func configurePaymentCardReaderSession(progressHandler: ((Swift.Int) -> Swift.Void)? = nil) async throws
+  #endif
   public func preparePaymentCardReaderSessionWithToken(_ tokenString: Swift.String) async throws
   public func readContactlessPaymentCard(for amount: Foundation.Decimal, currencyCode: Swift.String, transactionType: MagTekVirtualReader.PaymentTransactionType) async throws -> ProximityReader.PaymentCardReadResult
   @objc deinit
@@ -140,12 +189,16 @@ public struct MagTekVirtualReaderError : Swift.Error {
   public let Name: Swift.String
   public let Description: Swift.String
   public let FailureReason: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(name: Swift.String, localizedDescription: Swift.String, reason: Swift.String? = nil)
+  #endif
   public var errorMessage: Swift.String {
     get
   }
   public func getErrorMessage() -> Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getReasonFromError(_ error: any Swift.Error) -> Swift.String?
+  #endif
 }
 public enum PaymentTransactionType : Swift.Int, Swift.CaseIterable, Swift.Identifiable {
   case purchase, refund, authorize, zero_amount, surcharge
@@ -155,7 +208,9 @@ public enum PaymentTransactionType : Swift.Int, Swift.CaseIterable, Swift.Identi
   public var id: Swift.Int {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias AllCases = [MagTekVirtualReader.PaymentTransactionType]
   public typealias ID = Swift.Int
   public typealias RawValue = Swift.Int
@@ -166,19 +221,104 @@ public enum PaymentTransactionType : Swift.Int, Swift.CaseIterable, Swift.Identi
     get
   }
 }
+@available(iOS 18.4, *)
+public enum StoreAndForwardError : Foundation.LocalizedError {
+  case featureNotAvailable
+  case noActiveSession
+  case sessionNotReady
+  case storeUnavailable
+  case invalidBatch
+  case processingCancelled
+  case invalidDeleteToken
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var errorDescription: Swift.String? {
+    get
+  }
+  #endif
+  public static func == (a: MagTekVirtualReader.StoreAndForwardError, b: MagTekVirtualReader.StoreAndForwardError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct StoreAndForwardProcessingResult : Swift.Sendable {
+  public let resultCode: Swift.Int
+  public let resultMessage: Swift.String
+  public let deleteToken: Swift.String
+  public init(resultCode: Swift.Int, resultMessage: Swift.String, deleteToken: Swift.String)
+  public var isSuccess: Swift.Bool {
+    get
+  }
+}
+public struct StoreAndForwardBulkResult : Swift.Sendable {
+  public let batchID: Swift.String
+  public let processedCount: Swift.Int
+  public let remaining: Swift.Int
+  public let deleteToken: Swift.String
+  public init(batchID: Swift.String, processedCount: Swift.Int, remaining: Swift.Int, deleteToken: Swift.String)
+}
+public struct ProcessingResult : Swift.Sendable {
+  public let totalProcessed: Swift.Int
+  public let successfullyDeleted: Swift.Int
+  public let failed: Swift.Int
+  public let stoppedEarly: Swift.Bool
+  public var hasFailures: Swift.Bool {
+    get
+  }
+  public var allSuccessful: Swift.Bool {
+    get
+  }
+  public init(totalProcessed: Swift.Int, successfullyDeleted: Swift.Int, failed: Swift.Int, stoppedEarly: Swift.Bool)
+}
+@available(iOS 18.4, *)
+extension MagTekVirtualReader.MagTekVirtualCardReader {
+  public var hasActiveStoreAndForwardSession: Swift.Bool {
+    get
+  }
+  public func isStoreAndForwardAvailable() async -> Swift.Bool
+  public func readContactlessPaymentCardStoreAndForward(for amount: Foundation.Decimal, currencyCode: Swift.String, transactionType: MagTekVirtualReader.PaymentTransactionType) async throws -> ProximityReader.PaymentCardReadResult
+  public func cancelPreviousStoreAndForwardTransaction() async throws
+  public func numberOfStoredTransaction() async throws -> Swift.Int
+  public func getStoredTransactions(limit: Swift.Int = 0) async throws -> [ProximityReader.StoreAndForwardBatch.StoredPaymentCardReadResult]
+  public func fetchStoreAndForwardDeletionToken(batchID: Swift.String, customerTransactionID: Swift.String) async throws -> Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func fetchNextStoreAndForwardBatch() async throws -> ProximityReader.StoreAndForwardBatch?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func fetchAllStorePaymentCardReaderResultBatch() async throws -> ProximityReader.StoreAndForwardBatch?
+  #endif
+  public func deleteAllStorePaymentCardReaderResultBatch(_ batch: ProximityReader.StoreAndForwardBatch) async throws -> MagTekVirtualReader.StoreAndForwardBulkResult
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func fetchAllStorePaymentCardReaderResultBatchAndDeleteAll() async throws -> MagTekVirtualReader.StoreAndForwardBulkResult?
+  #endif
+  public func completeStoreAndForwardBatch(deleteToken: Swift.String) async throws -> Swift.Int
+  public func failStoreAndForwardBatch() async throws
+}
 public struct MagTekVRConfig {
   public let userName: Swift.String
   public let password: Swift.String
   public let url: Swift.String
+  public let storeAndForwardURL: Swift.String
   public var readerID: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(userName: Swift.String, password: Swift.String, url: Swift.String, readerID: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(userName: Swift.String, password: Swift.String, url: Swift.String, storeAndForwardURL: Swift.String, readerID: Swift.String?)
+  #endif
   public func validate() throws
 }
 extension MagTekVirtualReader.eNetworkError : Swift.Equatable {}
 extension MagTekVirtualReader.eNetworkError : Swift.Hashable {}
+extension MagTekVirtualReader.eStoreAndForwardError : Swift.Equatable {}
+extension MagTekVirtualReader.eStoreAndForwardError : Swift.Hashable {}
 extension MagTekVirtualReader.MagTekSDKError.Code : Swift.Equatable {}
 extension MagTekVirtualReader.MagTekSDKError.Code : Swift.Hashable {}
 extension MagTekVirtualReader.MagTekSDKError.Code : Swift.RawRepresentable {}
 extension MagTekVirtualReader.PaymentTransactionType : Swift.Equatable {}
 extension MagTekVirtualReader.PaymentTransactionType : Swift.Hashable {}
 extension MagTekVirtualReader.PaymentTransactionType : Swift.RawRepresentable {}
+@available(iOS 18.4, *)
+extension MagTekVirtualReader.StoreAndForwardError : Swift.Equatable {}
+@available(iOS 18.4, *)
+extension MagTekVirtualReader.StoreAndForwardError : Swift.Hashable {}
