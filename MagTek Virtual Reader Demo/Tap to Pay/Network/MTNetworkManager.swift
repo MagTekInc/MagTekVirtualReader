@@ -1,5 +1,5 @@
 //
-//  Created by MagTek on 8/18/25.
+//  Created by Bayram Mete on 8/18/25.
 //  Copyright © 2025 MagTek, Inc. All rights reserved.
 //
 
@@ -16,6 +16,7 @@ final class MTNetworkManager: MTNetworkProtocol {
     
     private init() {
         let config = URLSessionConfiguration.default
+        config.timeoutIntervalForRequest = 60
         config.timeoutIntervalForRequest = 60
         self.session = URLSession(configuration: config)
     }
@@ -47,7 +48,12 @@ final class MTNetworkManager: MTNetworkProtocol {
         
         #if DEBUG
             print("Request: \(request.httpMethod ?? "") \(request.url?.absoluteString ?? "")")
-            if let headers = request.allHTTPHeaderFields { print("Headers: \(headers)") }
+            if var headers = request.allHTTPHeaderFields {
+                if headers["Authorization"] != nil {
+                    headers["Authorization"] = "<redacted>"
+                }
+                print("Headers: \(headers)")
+            }
             if let body = request.httpBody, let json = String(data: body, encoding: .utf8) { print("Body: \(json)") }
         #endif
         

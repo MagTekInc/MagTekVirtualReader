@@ -1,5 +1,5 @@
 //
-//  Created by MagTekn on 8/12/25.
+//  Created by Xavier De Leon on 8/12/25.
 //  Copyright © 2025 MagTek, Inc. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import ProximityReader
 struct MagTekTapToPayDemoApp: App {
     @StateObject private var mtViewModel = MTViewModel()
     @Environment(\.scenePhase) var scenePhase
-    
+
     var body: some Scene {
         WindowGroup {
             MTVirtualReaderDemoView(model: mtViewModel)

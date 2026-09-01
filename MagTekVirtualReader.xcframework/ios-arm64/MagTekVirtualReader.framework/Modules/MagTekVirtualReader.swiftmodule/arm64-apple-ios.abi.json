@@ -5,358 +5,6 @@
     "printedName": "MagTekVirtualReader",
     "children": [
       {
-        "kind": "TypeDecl",
-        "name": "MagTekVRConfig",
-        "printedName": "MagTekVRConfig",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "userName",
-            "printedName": "userName",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:19MagTekVirtualReader0aB8VRConfigV8userNameSSvp",
-            "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8userNameSSvp",
-            "moduleName": "MagTekVirtualReader",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:19MagTekVirtualReader0aB8VRConfigV8userNameSSvg",
-                "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8userNameSSvg",
-                "moduleName": "MagTekVirtualReader",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "password",
-            "printedName": "password",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:19MagTekVirtualReader0aB8VRConfigV8passwordSSvp",
-            "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8passwordSSvp",
-            "moduleName": "MagTekVirtualReader",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:19MagTekVirtualReader0aB8VRConfigV8passwordSSvg",
-                "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8passwordSSvg",
-                "moduleName": "MagTekVirtualReader",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "url",
-            "printedName": "url",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:19MagTekVirtualReader0aB8VRConfigV3urlSSvp",
-            "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV3urlSSvp",
-            "moduleName": "MagTekVirtualReader",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:19MagTekVirtualReader0aB8VRConfigV3urlSSvg",
-                "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV3urlSSvg",
-                "moduleName": "MagTekVirtualReader",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "readerID",
-            "printedName": "readerID",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:19MagTekVirtualReader0aB8VRConfigV8readerIDSSSgvp",
-            "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8readerIDSSSgvp",
-            "moduleName": "MagTekVirtualReader",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Swift.String?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:19MagTekVirtualReader0aB8VRConfigV8readerIDSSSgvg",
-                "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8readerIDSSSgvg",
-                "moduleName": "MagTekVirtualReader",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Swift.String?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:19MagTekVirtualReader0aB8VRConfigV8readerIDSSSgvs",
-                "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8readerIDSSSgvs",
-                "moduleName": "MagTekVirtualReader",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:19MagTekVirtualReader0aB8VRConfigV8readerIDSSSgvM",
-                "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8readerIDSSSgvM",
-                "moduleName": "MagTekVirtualReader",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(userName:password:url:readerID:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "MagTekVRConfig",
-                "printedName": "MagTekVirtualReader.MagTekVRConfig",
-                "usr": "s:19MagTekVirtualReader0aB8VRConfigV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:19MagTekVirtualReader0aB8VRConfigV8userName8password3url8readerIDACSS_S3SSgtcfc",
-            "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8userName8password3url8readerIDACSS_S3SSgtcfc",
-            "moduleName": "MagTekVirtualReader",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Function",
-            "name": "validate",
-            "printedName": "validate()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:19MagTekVirtualReader0aB8VRConfigV8validateyyKF",
-            "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8validateyyKF",
-            "moduleName": "MagTekVirtualReader",
-            "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "throwing": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Struct",
-        "usr": "s:19MagTekVirtualReader0aB8VRConfigV",
-        "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV",
-        "moduleName": "MagTekVirtualReader",
-        "declAttributes": [
-          "AccessControl",
-          "RawDocComment"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          }
-        ]
-      },
-      {
         "kind": "Import",
         "name": "os",
         "printedName": "os",
@@ -640,6 +288,56 @@
           },
           {
             "kind": "Var",
+            "name": "storeAndForward",
+            "printedName": "storeAndForward",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MagTekVirtualReader.SDKError.Type) -> (MagTekVirtualReader.eStoreAndForwardError) -> MagTekVirtualReader.SDKError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(MagTekVirtualReader.eStoreAndForwardError) -> MagTekVirtualReader.SDKError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SDKError",
+                        "printedName": "MagTekVirtualReader.SDKError",
+                        "usr": "s:19MagTekVirtualReader8SDKErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "eStoreAndForwardError",
+                        "printedName": "MagTekVirtualReader.eStoreAndForwardError",
+                        "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MagTekVirtualReader.SDKError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SDKError",
+                        "printedName": "MagTekVirtualReader.SDKError",
+                        "usr": "s:19MagTekVirtualReader8SDKErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19MagTekVirtualReader8SDKErrorO15storeAndForwardyAcA06eStoregH5ErrorOcACmF",
+            "mangledName": "$s19MagTekVirtualReader8SDKErrorO15storeAndForwardyAcA06eStoregH5ErrorOcACmF",
+            "moduleName": "MagTekVirtualReader"
+          },
+          {
+            "kind": "Var",
             "name": "unknown",
             "printedName": "unknown",
             "children": [
@@ -785,6 +483,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -1127,6 +832,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -1304,6 +1016,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -1441,6 +1160,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -1575,6 +1301,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -1820,6 +1553,436 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "eStoreAndForwardError",
+        "printedName": "eStoreAndForwardError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "featureNotAvailable",
+            "printedName": "featureNotAvailable",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MagTekVirtualReader.eStoreAndForwardError.Type) -> MagTekVirtualReader.eStoreAndForwardError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "eStoreAndForwardError",
+                    "printedName": "MagTekVirtualReader.eStoreAndForwardError",
+                    "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MagTekVirtualReader.eStoreAndForwardError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "eStoreAndForwardError",
+                        "printedName": "MagTekVirtualReader.eStoreAndForwardError",
+                        "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO19featureNotAvailableyA2CmF",
+            "mangledName": "$s19MagTekVirtualReader21eStoreAndForwardErrorO19featureNotAvailableyA2CmF",
+            "moduleName": "MagTekVirtualReader"
+          },
+          {
+            "kind": "Var",
+            "name": "noActiveSession",
+            "printedName": "noActiveSession",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MagTekVirtualReader.eStoreAndForwardError.Type) -> MagTekVirtualReader.eStoreAndForwardError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "eStoreAndForwardError",
+                    "printedName": "MagTekVirtualReader.eStoreAndForwardError",
+                    "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MagTekVirtualReader.eStoreAndForwardError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "eStoreAndForwardError",
+                        "printedName": "MagTekVirtualReader.eStoreAndForwardError",
+                        "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO15noActiveSessionyA2CmF",
+            "mangledName": "$s19MagTekVirtualReader21eStoreAndForwardErrorO15noActiveSessionyA2CmF",
+            "moduleName": "MagTekVirtualReader"
+          },
+          {
+            "kind": "Var",
+            "name": "sessionNotReady",
+            "printedName": "sessionNotReady",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MagTekVirtualReader.eStoreAndForwardError.Type) -> MagTekVirtualReader.eStoreAndForwardError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "eStoreAndForwardError",
+                    "printedName": "MagTekVirtualReader.eStoreAndForwardError",
+                    "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MagTekVirtualReader.eStoreAndForwardError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "eStoreAndForwardError",
+                        "printedName": "MagTekVirtualReader.eStoreAndForwardError",
+                        "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO15sessionNotReadyyA2CmF",
+            "mangledName": "$s19MagTekVirtualReader21eStoreAndForwardErrorO15sessionNotReadyyA2CmF",
+            "moduleName": "MagTekVirtualReader"
+          },
+          {
+            "kind": "Var",
+            "name": "storeUnavailable",
+            "printedName": "storeUnavailable",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MagTekVirtualReader.eStoreAndForwardError.Type) -> MagTekVirtualReader.eStoreAndForwardError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "eStoreAndForwardError",
+                    "printedName": "MagTekVirtualReader.eStoreAndForwardError",
+                    "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MagTekVirtualReader.eStoreAndForwardError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "eStoreAndForwardError",
+                        "printedName": "MagTekVirtualReader.eStoreAndForwardError",
+                        "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO16storeUnavailableyA2CmF",
+            "mangledName": "$s19MagTekVirtualReader21eStoreAndForwardErrorO16storeUnavailableyA2CmF",
+            "moduleName": "MagTekVirtualReader"
+          },
+          {
+            "kind": "Var",
+            "name": "invalidBatch",
+            "printedName": "invalidBatch",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MagTekVirtualReader.eStoreAndForwardError.Type) -> MagTekVirtualReader.eStoreAndForwardError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "eStoreAndForwardError",
+                    "printedName": "MagTekVirtualReader.eStoreAndForwardError",
+                    "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MagTekVirtualReader.eStoreAndForwardError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "eStoreAndForwardError",
+                        "printedName": "MagTekVirtualReader.eStoreAndForwardError",
+                        "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO12invalidBatchyA2CmF",
+            "mangledName": "$s19MagTekVirtualReader21eStoreAndForwardErrorO12invalidBatchyA2CmF",
+            "moduleName": "MagTekVirtualReader"
+          },
+          {
+            "kind": "Var",
+            "name": "processingCancelled",
+            "printedName": "processingCancelled",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MagTekVirtualReader.eStoreAndForwardError.Type) -> MagTekVirtualReader.eStoreAndForwardError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "eStoreAndForwardError",
+                    "printedName": "MagTekVirtualReader.eStoreAndForwardError",
+                    "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MagTekVirtualReader.eStoreAndForwardError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "eStoreAndForwardError",
+                        "printedName": "MagTekVirtualReader.eStoreAndForwardError",
+                        "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO19processingCancelledyA2CmF",
+            "mangledName": "$s19MagTekVirtualReader21eStoreAndForwardErrorO19processingCancelledyA2CmF",
+            "moduleName": "MagTekVirtualReader"
+          },
+          {
+            "kind": "Var",
+            "name": "localizedDescription",
+            "printedName": "localizedDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO20localizedDescriptionSSvp",
+            "mangledName": "$s19MagTekVirtualReader21eStoreAndForwardErrorO20localizedDescriptionSSvp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO20localizedDescriptionSSvg",
+                "mangledName": "$s19MagTekVirtualReader21eStoreAndForwardErrorO20localizedDescriptionSSvg",
+                "moduleName": "MagTekVirtualReader",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "eStoreAndForwardError",
+                "printedName": "MagTekVirtualReader.eStoreAndForwardError",
+                "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "eStoreAndForwardError",
+                "printedName": "MagTekVirtualReader.eStoreAndForwardError",
+                "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s19MagTekVirtualReader21eStoreAndForwardErrorO2eeoiySbAC_ACtFZ",
+            "moduleName": "MagTekVirtualReader",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO9hashValueSivp",
+            "mangledName": "$s19MagTekVirtualReader21eStoreAndForwardErrorO9hashValueSivp",
+            "moduleName": "MagTekVirtualReader",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO9hashValueSivg",
+                "mangledName": "$s19MagTekVirtualReader21eStoreAndForwardErrorO9hashValueSivg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO4hash4intoys6HasherVz_tF",
+            "mangledName": "$s19MagTekVirtualReader21eStoreAndForwardErrorO4hash4intoys6HasherVz_tF",
+            "moduleName": "MagTekVirtualReader",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:19MagTekVirtualReader21eStoreAndForwardErrorO",
+        "mangledName": "$s19MagTekVirtualReader21eStoreAndForwardErrorO",
+        "moduleName": "MagTekVirtualReader",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -2053,6 +2216,231 @@
                 "declKind": "EnumElement",
                 "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO18deviceNotSupportedyA2EmF",
                 "mangledName": "$s19MagTekVirtualReader0aB8SDKErrorV4CodeO18deviceNotSupportedyA2EmF",
+                "moduleName": "MagTekVirtualReader"
+              },
+              {
+                "kind": "Var",
+                "name": "storeAndForwardNotAvailable",
+                "printedName": "storeAndForwardNotAvailable",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(MagTekVirtualReader.MagTekSDKError.Code.Type) -> MagTekVirtualReader.MagTekSDKError.Code",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Code",
+                        "printedName": "MagTekVirtualReader.MagTekSDKError.Code",
+                        "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "MagTekVirtualReader.MagTekSDKError.Code.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Code",
+                            "printedName": "MagTekVirtualReader.MagTekSDKError.Code",
+                            "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO27storeAndForwardNotAvailableyA2EmF",
+                "mangledName": "$s19MagTekVirtualReader0aB8SDKErrorV4CodeO27storeAndForwardNotAvailableyA2EmF",
+                "moduleName": "MagTekVirtualReader",
+                "declAttributes": [
+                  "RawDocComment"
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "storeAndForwardNoActiveSession",
+                "printedName": "storeAndForwardNoActiveSession",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(MagTekVirtualReader.MagTekSDKError.Code.Type) -> MagTekVirtualReader.MagTekSDKError.Code",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Code",
+                        "printedName": "MagTekVirtualReader.MagTekSDKError.Code",
+                        "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "MagTekVirtualReader.MagTekSDKError.Code.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Code",
+                            "printedName": "MagTekVirtualReader.MagTekSDKError.Code",
+                            "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO30storeAndForwardNoActiveSessionyA2EmF",
+                "mangledName": "$s19MagTekVirtualReader0aB8SDKErrorV4CodeO30storeAndForwardNoActiveSessionyA2EmF",
+                "moduleName": "MagTekVirtualReader"
+              },
+              {
+                "kind": "Var",
+                "name": "storeAndForwardSessionNotReady",
+                "printedName": "storeAndForwardSessionNotReady",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(MagTekVirtualReader.MagTekSDKError.Code.Type) -> MagTekVirtualReader.MagTekSDKError.Code",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Code",
+                        "printedName": "MagTekVirtualReader.MagTekSDKError.Code",
+                        "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "MagTekVirtualReader.MagTekSDKError.Code.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Code",
+                            "printedName": "MagTekVirtualReader.MagTekSDKError.Code",
+                            "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO30storeAndForwardSessionNotReadyyA2EmF",
+                "mangledName": "$s19MagTekVirtualReader0aB8SDKErrorV4CodeO30storeAndForwardSessionNotReadyyA2EmF",
+                "moduleName": "MagTekVirtualReader"
+              },
+              {
+                "kind": "Var",
+                "name": "storeAndForwardStoreUnavailable",
+                "printedName": "storeAndForwardStoreUnavailable",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(MagTekVirtualReader.MagTekSDKError.Code.Type) -> MagTekVirtualReader.MagTekSDKError.Code",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Code",
+                        "printedName": "MagTekVirtualReader.MagTekSDKError.Code",
+                        "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "MagTekVirtualReader.MagTekSDKError.Code.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Code",
+                            "printedName": "MagTekVirtualReader.MagTekSDKError.Code",
+                            "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO31storeAndForwardStoreUnavailableyA2EmF",
+                "mangledName": "$s19MagTekVirtualReader0aB8SDKErrorV4CodeO31storeAndForwardStoreUnavailableyA2EmF",
+                "moduleName": "MagTekVirtualReader"
+              },
+              {
+                "kind": "Var",
+                "name": "storeAndForwardInvalidBatch",
+                "printedName": "storeAndForwardInvalidBatch",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(MagTekVirtualReader.MagTekSDKError.Code.Type) -> MagTekVirtualReader.MagTekSDKError.Code",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Code",
+                        "printedName": "MagTekVirtualReader.MagTekSDKError.Code",
+                        "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "MagTekVirtualReader.MagTekSDKError.Code.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Code",
+                            "printedName": "MagTekVirtualReader.MagTekSDKError.Code",
+                            "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO27storeAndForwardInvalidBatchyA2EmF",
+                "mangledName": "$s19MagTekVirtualReader0aB8SDKErrorV4CodeO27storeAndForwardInvalidBatchyA2EmF",
+                "moduleName": "MagTekVirtualReader"
+              },
+              {
+                "kind": "Var",
+                "name": "storeAndForwardProcessingCancelled",
+                "printedName": "storeAndForwardProcessingCancelled",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(MagTekVirtualReader.MagTekSDKError.Code.Type) -> MagTekVirtualReader.MagTekSDKError.Code",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Code",
+                        "printedName": "MagTekVirtualReader.MagTekSDKError.Code",
+                        "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "MagTekVirtualReader.MagTekSDKError.Code.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Code",
+                            "printedName": "MagTekVirtualReader.MagTekSDKError.Code",
+                            "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:19MagTekVirtualReader0aB8SDKErrorV4CodeO34storeAndForwardProcessingCancelledyA2EmF",
+                "mangledName": "$s19MagTekVirtualReader0aB8SDKErrorV4CodeO34storeAndForwardProcessingCancelledyA2EmF",
                 "moduleName": "MagTekVirtualReader"
               },
               {
@@ -2662,6 +3050,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -2897,6 +3292,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -3847,7 +4249,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(config:)",
+            "printedName": "init(config:returnReadResultImmediately:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -3860,11 +4262,18 @@
                 "name": "MagTekVRConfig",
                 "printedName": "MagTekVirtualReader.MagTekVRConfig",
                 "usr": "s:19MagTekVirtualReader0aB8VRConfigV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:19MagTekVirtualReader0abc4CardD0C6configAcA0aB8VRConfigV_tcfc",
-            "mangledName": "$s19MagTekVirtualReader0abc4CardD0C6configAcA0aB8VRConfigV_tcfc",
+            "usr": "s:19MagTekVirtualReader0abc4CardD0C6config27returnReadResultImmediatelyAcA0aB8VRConfigV_Sbtcfc",
+            "mangledName": "$s19MagTekVirtualReader0abc4CardD0C6config27returnReadResultImmediatelyAcA0aB8VRConfigV_Sbtcfc",
             "moduleName": "MagTekVirtualReader",
             "declAttributes": [
               "AccessControl",
@@ -4172,6 +4581,66 @@
           },
           {
             "kind": "Function",
+            "name": "paymentCardReaderTokenExpirationDate",
+            "printedName": "paymentCardReaderTokenExpirationDate()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Date?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader0abc4CardD0C07paymenteD19TokenExpirationDate10Foundation0I0VSgyF",
+            "mangledName": "$s19MagTekVirtualReader0abc4CardD0C07paymenteD19TokenExpirationDate10Foundation0I0VSgyF",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "paymentCardReaderTokenSecondsRemaining",
+            "printedName": "paymentCardReaderTokenSecondsRemaining()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader0abc4CardD0C07paymenteD21TokenSecondsRemainingSdSgyF",
+            "mangledName": "$s19MagTekVirtualReader0abc4CardD0C07paymenteD21TokenSecondsRemainingSdSgyF",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "configurePaymentCardReaderSession",
             "printedName": "configurePaymentCardReaderSession(progressHandler:)",
             "children": [
@@ -4285,6 +4754,415 @@
               "AccessControl",
               "RawDocComment"
             ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hasActiveStoreAndForwardSession",
+            "printedName": "hasActiveStoreAndForwardSession",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader0abc4CardD0C31hasActiveStoreAndForwardSessionSbvp",
+            "mangledName": "$s19MagTekVirtualReader0abc4CardD0C31hasActiveStoreAndForwardSessionSbvp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader0abc4CardD0C31hasActiveStoreAndForwardSessionSbvg",
+                "mangledName": "$s19MagTekVirtualReader0abc4CardD0C31hasActiveStoreAndForwardSessionSbvg",
+                "moduleName": "MagTekVirtualReader",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "isStoreAndForwardAvailable",
+            "printedName": "isStoreAndForwardAvailable()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader0abc4CardD0C26isStoreAndForwardAvailableSbyYaF",
+            "mangledName": "$s19MagTekVirtualReader0abc4CardD0C26isStoreAndForwardAvailableSbyYaF",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "readContactlessPaymentCardStoreAndForward",
+            "printedName": "readContactlessPaymentCardStoreAndForward(for:currencyCode:transactionType:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PaymentCardReadResult",
+                "printedName": "ProximityReader.PaymentCardReadResult",
+                "usr": "s:15ProximityReader21PaymentCardReadResultV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decimal",
+                "printedName": "Foundation.Decimal",
+                "usr": "c:@SA@NSDecimal"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PaymentTransactionType",
+                "printedName": "MagTekVirtualReader.PaymentTransactionType",
+                "usr": "s:19MagTekVirtualReader22PaymentTransactionTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader0abc4CardD0C022readContactlessPaymentE15StoreAndForward3for12currencyCode15transactionType09ProximityD00hE10ReadResultVSo9NSDecimala_SSAA0h11TransactionP0OtYaKF",
+            "mangledName": "$s19MagTekVirtualReader0abc4CardD0C022readContactlessPaymentE15StoreAndForward3for12currencyCode15transactionType09ProximityD00hE10ReadResultVSo9NSDecimala_SSAA0h11TransactionP0OtYaKF",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "cancelPreviousStoreAndForwardTransaction",
+            "printedName": "cancelPreviousStoreAndForwardTransaction()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader0abc4CardD0C40cancelPreviousStoreAndForwardTransactionyyYaKF",
+            "mangledName": "$s19MagTekVirtualReader0abc4CardD0C40cancelPreviousStoreAndForwardTransactionyyYaKF",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "numberOfStoredTransaction",
+            "printedName": "numberOfStoredTransaction()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader0abc4CardD0C25numberOfStoredTransactionSiyYaKF",
+            "mangledName": "$s19MagTekVirtualReader0abc4CardD0C25numberOfStoredTransactionSiyYaKF",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getStoredTransactions",
+            "printedName": "getStoredTransactions(limit:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[ProximityReader.StoreAndForwardBatch.StoredPaymentCardReadResult]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "StoredPaymentCardReadResult",
+                    "printedName": "ProximityReader.StoreAndForwardBatch.StoredPaymentCardReadResult",
+                    "usr": "s:15ProximityReader20StoreAndForwardBatchV27StoredPaymentCardReadResultV"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "hasDefaultArg": true,
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader0abc4CardD0C21getStoredTransactions5limitSay09ProximityD020StoreAndForwardBatchV0g7PaymentE10ReadResultVGSi_tYaKF",
+            "mangledName": "$s19MagTekVirtualReader0abc4CardD0C21getStoredTransactions5limitSay09ProximityD020StoreAndForwardBatchV0g7PaymentE10ReadResultVGSi_tYaKF",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fetchStoreAndForwardDeletionToken",
+            "printedName": "fetchStoreAndForwardDeletionToken(batchID:customerTransactionID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader0abc4CardD0C33fetchStoreAndForwardDeletionToken7batchID019customerTransactionM0S2S_SStYaKF",
+            "mangledName": "$s19MagTekVirtualReader0abc4CardD0C33fetchStoreAndForwardDeletionToken7batchID019customerTransactionM0S2S_SStYaKF",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fetchNextStoreAndForwardBatch",
+            "printedName": "fetchNextStoreAndForwardBatch()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ProximityReader.StoreAndForwardBatch?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "StoreAndForwardBatch",
+                    "printedName": "ProximityReader.StoreAndForwardBatch",
+                    "usr": "s:15ProximityReader20StoreAndForwardBatchV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader0abc4CardD0C29fetchNextStoreAndForwardBatch09ProximityD00hijK0VSgyYaKF",
+            "mangledName": "$s19MagTekVirtualReader0abc4CardD0C29fetchNextStoreAndForwardBatch09ProximityD00hijK0VSgyYaKF",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fetchAllStorePaymentCardReaderResultBatch",
+            "printedName": "fetchAllStorePaymentCardReaderResultBatch()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ProximityReader.StoreAndForwardBatch?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "StoreAndForwardBatch",
+                    "printedName": "ProximityReader.StoreAndForwardBatch",
+                    "usr": "s:15ProximityReader20StoreAndForwardBatchV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader0abc4CardD0C020fetchAllStorePaymenteD11ResultBatch09ProximityD00h10AndForwardK0VSgyYaKF",
+            "mangledName": "$s19MagTekVirtualReader0abc4CardD0C020fetchAllStorePaymenteD11ResultBatch09ProximityD00h10AndForwardK0VSgyYaKF",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "deleteAllStorePaymentCardReaderResultBatch",
+            "printedName": "deleteAllStorePaymentCardReaderResultBatch(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "StoreAndForwardBulkResult",
+                "printedName": "MagTekVirtualReader.StoreAndForwardBulkResult",
+                "usr": "s:19MagTekVirtualReader25StoreAndForwardBulkResultV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "StoreAndForwardBatch",
+                "printedName": "ProximityReader.StoreAndForwardBatch",
+                "usr": "s:15ProximityReader20StoreAndForwardBatchV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader0abc4CardD0C021deleteAllStorePaymenteD11ResultBatchyAA0h14AndForwardBulkJ0V09ProximityD00hlmK0VYaKF",
+            "mangledName": "$s19MagTekVirtualReader0abc4CardD0C021deleteAllStorePaymenteD11ResultBatchyAA0h14AndForwardBulkJ0V09ProximityD00hlmK0VYaKF",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fetchAllStorePaymentCardReaderResultBatchAndDeleteAll",
+            "printedName": "fetchAllStorePaymentCardReaderResultBatchAndDeleteAll()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MagTekVirtualReader.StoreAndForwardBulkResult?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "StoreAndForwardBulkResult",
+                    "printedName": "MagTekVirtualReader.StoreAndForwardBulkResult",
+                    "usr": "s:19MagTekVirtualReader25StoreAndForwardBulkResultV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader0abc4CardD0C020fetchAllStorePaymented20ResultBatchAndDeleteG0AA0hl11ForwardBulkJ0VSgyYaKF",
+            "mangledName": "$s19MagTekVirtualReader0abc4CardD0C020fetchAllStorePaymented20ResultBatchAndDeleteG0AA0hl11ForwardBulkJ0VSgyYaKF",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "completeStoreAndForwardBatch",
+            "printedName": "completeStoreAndForwardBatch(deleteToken:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader0abc4CardD0C28completeStoreAndForwardBatch11deleteTokenSiSS_tYaKF",
+            "mangledName": "$s19MagTekVirtualReader0abc4CardD0C28completeStoreAndForwardBatch11deleteTokenSiSS_tYaKF",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "failStoreAndForwardBatch",
+            "printedName": "failStoreAndForwardBatch()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader0abc4CardD0C24failStoreAndForwardBatchyyYaKF",
+            "mangledName": "$s19MagTekVirtualReader0abc4CardD0C24failStoreAndForwardBatchyyYaKF",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
             "throwing": true,
             "funcSelfKind": "NonMutating"
           }
@@ -4672,6 +5550,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -5193,6 +6078,1849 @@
             "mangledName": "$ss12IdentifiableP"
           }
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MagTekVirtualReader",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "ProximityReader",
+        "printedName": "ProximityReader",
+        "declKind": "Import",
+        "moduleName": "MagTekVirtualReader"
+      },
+      {
+        "kind": "Import",
+        "name": "os",
+        "printedName": "os",
+        "declKind": "Import",
+        "moduleName": "MagTekVirtualReader"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "StoreAndForwardError",
+        "printedName": "StoreAndForwardError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "featureNotAvailable",
+            "printedName": "featureNotAvailable",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MagTekVirtualReader.StoreAndForwardError.Type) -> MagTekVirtualReader.StoreAndForwardError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "StoreAndForwardError",
+                    "printedName": "MagTekVirtualReader.StoreAndForwardError",
+                    "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MagTekVirtualReader.StoreAndForwardError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "StoreAndForwardError",
+                        "printedName": "MagTekVirtualReader.StoreAndForwardError",
+                        "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO19featureNotAvailableyA2CmF",
+            "mangledName": "$s19MagTekVirtualReader20StoreAndForwardErrorO19featureNotAvailableyA2CmF",
+            "moduleName": "MagTekVirtualReader"
+          },
+          {
+            "kind": "Var",
+            "name": "noActiveSession",
+            "printedName": "noActiveSession",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MagTekVirtualReader.StoreAndForwardError.Type) -> MagTekVirtualReader.StoreAndForwardError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "StoreAndForwardError",
+                    "printedName": "MagTekVirtualReader.StoreAndForwardError",
+                    "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MagTekVirtualReader.StoreAndForwardError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "StoreAndForwardError",
+                        "printedName": "MagTekVirtualReader.StoreAndForwardError",
+                        "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO15noActiveSessionyA2CmF",
+            "mangledName": "$s19MagTekVirtualReader20StoreAndForwardErrorO15noActiveSessionyA2CmF",
+            "moduleName": "MagTekVirtualReader"
+          },
+          {
+            "kind": "Var",
+            "name": "sessionNotReady",
+            "printedName": "sessionNotReady",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MagTekVirtualReader.StoreAndForwardError.Type) -> MagTekVirtualReader.StoreAndForwardError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "StoreAndForwardError",
+                    "printedName": "MagTekVirtualReader.StoreAndForwardError",
+                    "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MagTekVirtualReader.StoreAndForwardError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "StoreAndForwardError",
+                        "printedName": "MagTekVirtualReader.StoreAndForwardError",
+                        "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO15sessionNotReadyyA2CmF",
+            "mangledName": "$s19MagTekVirtualReader20StoreAndForwardErrorO15sessionNotReadyyA2CmF",
+            "moduleName": "MagTekVirtualReader"
+          },
+          {
+            "kind": "Var",
+            "name": "storeUnavailable",
+            "printedName": "storeUnavailable",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MagTekVirtualReader.StoreAndForwardError.Type) -> MagTekVirtualReader.StoreAndForwardError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "StoreAndForwardError",
+                    "printedName": "MagTekVirtualReader.StoreAndForwardError",
+                    "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MagTekVirtualReader.StoreAndForwardError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "StoreAndForwardError",
+                        "printedName": "MagTekVirtualReader.StoreAndForwardError",
+                        "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO16storeUnavailableyA2CmF",
+            "mangledName": "$s19MagTekVirtualReader20StoreAndForwardErrorO16storeUnavailableyA2CmF",
+            "moduleName": "MagTekVirtualReader"
+          },
+          {
+            "kind": "Var",
+            "name": "invalidBatch",
+            "printedName": "invalidBatch",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MagTekVirtualReader.StoreAndForwardError.Type) -> MagTekVirtualReader.StoreAndForwardError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "StoreAndForwardError",
+                    "printedName": "MagTekVirtualReader.StoreAndForwardError",
+                    "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MagTekVirtualReader.StoreAndForwardError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "StoreAndForwardError",
+                        "printedName": "MagTekVirtualReader.StoreAndForwardError",
+                        "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO12invalidBatchyA2CmF",
+            "mangledName": "$s19MagTekVirtualReader20StoreAndForwardErrorO12invalidBatchyA2CmF",
+            "moduleName": "MagTekVirtualReader"
+          },
+          {
+            "kind": "Var",
+            "name": "processingCancelled",
+            "printedName": "processingCancelled",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MagTekVirtualReader.StoreAndForwardError.Type) -> MagTekVirtualReader.StoreAndForwardError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "StoreAndForwardError",
+                    "printedName": "MagTekVirtualReader.StoreAndForwardError",
+                    "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MagTekVirtualReader.StoreAndForwardError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "StoreAndForwardError",
+                        "printedName": "MagTekVirtualReader.StoreAndForwardError",
+                        "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO19processingCancelledyA2CmF",
+            "mangledName": "$s19MagTekVirtualReader20StoreAndForwardErrorO19processingCancelledyA2CmF",
+            "moduleName": "MagTekVirtualReader"
+          },
+          {
+            "kind": "Var",
+            "name": "invalidDeleteToken",
+            "printedName": "invalidDeleteToken",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MagTekVirtualReader.StoreAndForwardError.Type) -> MagTekVirtualReader.StoreAndForwardError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "StoreAndForwardError",
+                    "printedName": "MagTekVirtualReader.StoreAndForwardError",
+                    "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MagTekVirtualReader.StoreAndForwardError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "StoreAndForwardError",
+                        "printedName": "MagTekVirtualReader.StoreAndForwardError",
+                        "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO18invalidDeleteTokenyA2CmF",
+            "mangledName": "$s19MagTekVirtualReader20StoreAndForwardErrorO18invalidDeleteTokenyA2CmF",
+            "moduleName": "MagTekVirtualReader"
+          },
+          {
+            "kind": "Var",
+            "name": "errorDescription",
+            "printedName": "errorDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO16errorDescriptionSSSgvp",
+            "mangledName": "$s19MagTekVirtualReader20StoreAndForwardErrorO16errorDescriptionSSSgvp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO16errorDescriptionSSSgvg",
+                "mangledName": "$s19MagTekVirtualReader20StoreAndForwardErrorO16errorDescriptionSSSgvg",
+                "moduleName": "MagTekVirtualReader",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "StoreAndForwardError",
+                "printedName": "MagTekVirtualReader.StoreAndForwardError",
+                "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "StoreAndForwardError",
+                "printedName": "MagTekVirtualReader.StoreAndForwardError",
+                "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s19MagTekVirtualReader20StoreAndForwardErrorO2eeoiySbAC_ACtFZ",
+            "moduleName": "MagTekVirtualReader",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO9hashValueSivp",
+            "mangledName": "$s19MagTekVirtualReader20StoreAndForwardErrorO9hashValueSivp",
+            "moduleName": "MagTekVirtualReader",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO9hashValueSivg",
+                "mangledName": "$s19MagTekVirtualReader20StoreAndForwardErrorO9hashValueSivg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO4hash4intoys6HasherVz_tF",
+            "mangledName": "$s19MagTekVirtualReader20StoreAndForwardErrorO4hash4intoys6HasherVz_tF",
+            "moduleName": "MagTekVirtualReader",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:19MagTekVirtualReader20StoreAndForwardErrorO",
+        "mangledName": "$s19MagTekVirtualReader20StoreAndForwardErrorO",
+        "moduleName": "MagTekVirtualReader",
+        "intro_iOS": "18.4",
+        "declAttributes": [
+          "AccessControl",
+          "Available"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LocalizedError",
+            "printedName": "LocalizedError",
+            "usr": "s:10Foundation14LocalizedErrorP",
+            "mangledName": "$s10Foundation14LocalizedErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "StoreAndForwardProcessingResult",
+        "printedName": "StoreAndForwardProcessingResult",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "resultCode",
+            "printedName": "resultCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader31StoreAndForwardProcessingResultV10resultCodeSivp",
+            "mangledName": "$s19MagTekVirtualReader31StoreAndForwardProcessingResultV10resultCodeSivp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader31StoreAndForwardProcessingResultV10resultCodeSivg",
+                "mangledName": "$s19MagTekVirtualReader31StoreAndForwardProcessingResultV10resultCodeSivg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "resultMessage",
+            "printedName": "resultMessage",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader31StoreAndForwardProcessingResultV13resultMessageSSvp",
+            "mangledName": "$s19MagTekVirtualReader31StoreAndForwardProcessingResultV13resultMessageSSvp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader31StoreAndForwardProcessingResultV13resultMessageSSvg",
+                "mangledName": "$s19MagTekVirtualReader31StoreAndForwardProcessingResultV13resultMessageSSvg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "deleteToken",
+            "printedName": "deleteToken",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader31StoreAndForwardProcessingResultV11deleteTokenSSvp",
+            "mangledName": "$s19MagTekVirtualReader31StoreAndForwardProcessingResultV11deleteTokenSSvp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader31StoreAndForwardProcessingResultV11deleteTokenSSvg",
+                "mangledName": "$s19MagTekVirtualReader31StoreAndForwardProcessingResultV11deleteTokenSSvg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(resultCode:resultMessage:deleteToken:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "StoreAndForwardProcessingResult",
+                "printedName": "MagTekVirtualReader.StoreAndForwardProcessingResult",
+                "usr": "s:19MagTekVirtualReader31StoreAndForwardProcessingResultV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19MagTekVirtualReader31StoreAndForwardProcessingResultV10resultCode0J7Message11deleteTokenACSi_S2Stcfc",
+            "mangledName": "$s19MagTekVirtualReader31StoreAndForwardProcessingResultV10resultCode0J7Message11deleteTokenACSi_S2Stcfc",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "isSuccess",
+            "printedName": "isSuccess",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader31StoreAndForwardProcessingResultV9isSuccessSbvp",
+            "mangledName": "$s19MagTekVirtualReader31StoreAndForwardProcessingResultV9isSuccessSbvp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader31StoreAndForwardProcessingResultV9isSuccessSbvg",
+                "mangledName": "$s19MagTekVirtualReader31StoreAndForwardProcessingResultV9isSuccessSbvg",
+                "moduleName": "MagTekVirtualReader",
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19MagTekVirtualReader31StoreAndForwardProcessingResultV",
+        "mangledName": "$s19MagTekVirtualReader31StoreAndForwardProcessingResultV",
+        "moduleName": "MagTekVirtualReader",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "StoreAndForwardBulkResult",
+        "printedName": "StoreAndForwardBulkResult",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "batchID",
+            "printedName": "batchID",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader25StoreAndForwardBulkResultV7batchIDSSvp",
+            "mangledName": "$s19MagTekVirtualReader25StoreAndForwardBulkResultV7batchIDSSvp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader25StoreAndForwardBulkResultV7batchIDSSvg",
+                "mangledName": "$s19MagTekVirtualReader25StoreAndForwardBulkResultV7batchIDSSvg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "processedCount",
+            "printedName": "processedCount",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader25StoreAndForwardBulkResultV14processedCountSivp",
+            "mangledName": "$s19MagTekVirtualReader25StoreAndForwardBulkResultV14processedCountSivp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader25StoreAndForwardBulkResultV14processedCountSivg",
+                "mangledName": "$s19MagTekVirtualReader25StoreAndForwardBulkResultV14processedCountSivg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "remaining",
+            "printedName": "remaining",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader25StoreAndForwardBulkResultV9remainingSivp",
+            "mangledName": "$s19MagTekVirtualReader25StoreAndForwardBulkResultV9remainingSivp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader25StoreAndForwardBulkResultV9remainingSivg",
+                "mangledName": "$s19MagTekVirtualReader25StoreAndForwardBulkResultV9remainingSivg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "deleteToken",
+            "printedName": "deleteToken",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader25StoreAndForwardBulkResultV11deleteTokenSSvp",
+            "mangledName": "$s19MagTekVirtualReader25StoreAndForwardBulkResultV11deleteTokenSSvp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader25StoreAndForwardBulkResultV11deleteTokenSSvg",
+                "mangledName": "$s19MagTekVirtualReader25StoreAndForwardBulkResultV11deleteTokenSSvg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(batchID:processedCount:remaining:deleteToken:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "StoreAndForwardBulkResult",
+                "printedName": "MagTekVirtualReader.StoreAndForwardBulkResult",
+                "usr": "s:19MagTekVirtualReader25StoreAndForwardBulkResultV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19MagTekVirtualReader25StoreAndForwardBulkResultV7batchID14processedCount9remaining11deleteTokenACSS_S2iSStcfc",
+            "mangledName": "$s19MagTekVirtualReader25StoreAndForwardBulkResultV7batchID14processedCount9remaining11deleteTokenACSS_S2iSStcfc",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19MagTekVirtualReader25StoreAndForwardBulkResultV",
+        "mangledName": "$s19MagTekVirtualReader25StoreAndForwardBulkResultV",
+        "moduleName": "MagTekVirtualReader",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ProcessingResult",
+        "printedName": "ProcessingResult",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "totalProcessed",
+            "printedName": "totalProcessed",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader16ProcessingResultV14totalProcessedSivp",
+            "mangledName": "$s19MagTekVirtualReader16ProcessingResultV14totalProcessedSivp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader16ProcessingResultV14totalProcessedSivg",
+                "mangledName": "$s19MagTekVirtualReader16ProcessingResultV14totalProcessedSivg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "successfullyDeleted",
+            "printedName": "successfullyDeleted",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader16ProcessingResultV19successfullyDeletedSivp",
+            "mangledName": "$s19MagTekVirtualReader16ProcessingResultV19successfullyDeletedSivp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader16ProcessingResultV19successfullyDeletedSivg",
+                "mangledName": "$s19MagTekVirtualReader16ProcessingResultV19successfullyDeletedSivg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "failed",
+            "printedName": "failed",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader16ProcessingResultV6failedSivp",
+            "mangledName": "$s19MagTekVirtualReader16ProcessingResultV6failedSivp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader16ProcessingResultV6failedSivg",
+                "mangledName": "$s19MagTekVirtualReader16ProcessingResultV6failedSivg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "stoppedEarly",
+            "printedName": "stoppedEarly",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader16ProcessingResultV12stoppedEarlySbvp",
+            "mangledName": "$s19MagTekVirtualReader16ProcessingResultV12stoppedEarlySbvp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader16ProcessingResultV12stoppedEarlySbvg",
+                "mangledName": "$s19MagTekVirtualReader16ProcessingResultV12stoppedEarlySbvg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "hasFailures",
+            "printedName": "hasFailures",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader16ProcessingResultV11hasFailuresSbvp",
+            "mangledName": "$s19MagTekVirtualReader16ProcessingResultV11hasFailuresSbvp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader16ProcessingResultV11hasFailuresSbvg",
+                "mangledName": "$s19MagTekVirtualReader16ProcessingResultV11hasFailuresSbvg",
+                "moduleName": "MagTekVirtualReader",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "allSuccessful",
+            "printedName": "allSuccessful",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader16ProcessingResultV13allSuccessfulSbvp",
+            "mangledName": "$s19MagTekVirtualReader16ProcessingResultV13allSuccessfulSbvp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader16ProcessingResultV13allSuccessfulSbvg",
+                "mangledName": "$s19MagTekVirtualReader16ProcessingResultV13allSuccessfulSbvg",
+                "moduleName": "MagTekVirtualReader",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(totalProcessed:successfullyDeleted:failed:stoppedEarly:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProcessingResult",
+                "printedName": "MagTekVirtualReader.ProcessingResult",
+                "usr": "s:19MagTekVirtualReader16ProcessingResultV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19MagTekVirtualReader16ProcessingResultV14totalProcessed19successfullyDeleted6failed12stoppedEarlyACSi_S2iSbtcfc",
+            "mangledName": "$s19MagTekVirtualReader16ProcessingResultV14totalProcessed19successfullyDeleted6failed12stoppedEarlyACSi_S2iSbtcfc",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19MagTekVirtualReader16ProcessingResultV",
+        "mangledName": "$s19MagTekVirtualReader16ProcessingResultV",
+        "moduleName": "MagTekVirtualReader",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MagTekVRConfig",
+        "printedName": "MagTekVRConfig",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "userName",
+            "printedName": "userName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader0aB8VRConfigV8userNameSSvp",
+            "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8userNameSSvp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader0aB8VRConfigV8userNameSSvg",
+                "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8userNameSSvg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "password",
+            "printedName": "password",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader0aB8VRConfigV8passwordSSvp",
+            "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8passwordSSvp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader0aB8VRConfigV8passwordSSvg",
+                "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8passwordSSvg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "url",
+            "printedName": "url",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader0aB8VRConfigV3urlSSvp",
+            "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV3urlSSvp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader0aB8VRConfigV3urlSSvg",
+                "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV3urlSSvg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "storeAndForwardURL",
+            "printedName": "storeAndForwardURL",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader0aB8VRConfigV18storeAndForwardURLSSvp",
+            "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV18storeAndForwardURLSSvp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader0aB8VRConfigV18storeAndForwardURLSSvg",
+                "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV18storeAndForwardURLSSvg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "readerID",
+            "printedName": "readerID",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19MagTekVirtualReader0aB8VRConfigV8readerIDSSSgvp",
+            "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8readerIDSSSgvp",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader0aB8VRConfigV8readerIDSSSgvg",
+                "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8readerIDSSSgvg",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader0aB8VRConfigV8readerIDSSSgvs",
+                "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8readerIDSSSgvs",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19MagTekVirtualReader0aB8VRConfigV8readerIDSSSgvM",
+                "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8readerIDSSSgvM",
+                "moduleName": "MagTekVirtualReader",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(userName:password:url:readerID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MagTekVRConfig",
+                "printedName": "MagTekVirtualReader.MagTekVRConfig",
+                "usr": "s:19MagTekVirtualReader0aB8VRConfigV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19MagTekVirtualReader0aB8VRConfigV8userName8password3url8readerIDACSS_S3SSgtcfc",
+            "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8userName8password3url8readerIDACSS_S3SSgtcfc",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(userName:password:url:storeAndForwardURL:readerID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MagTekVRConfig",
+                "printedName": "MagTekVirtualReader.MagTekVRConfig",
+                "usr": "s:19MagTekVirtualReader0aB8VRConfigV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19MagTekVirtualReader0aB8VRConfigV8userName8password3url18storeAndForwardURL8readerIDACSS_S4SSgtcfc",
+            "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8userName8password3url18storeAndForwardURL8readerIDACSS_S4SSgtcfc",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "validate",
+            "printedName": "validate()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MagTekVirtualReader0aB8VRConfigV8validateyyKF",
+            "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV8validateyyKF",
+            "moduleName": "MagTekVirtualReader",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19MagTekVirtualReader0aB8VRConfigV",
+        "mangledName": "$s19MagTekVirtualReader0aB8VRConfigV",
+        "moduleName": "MagTekVirtualReader",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
       }
     ],
     "json_format_version": 8
@@ -5222,44 +7950,86 @@
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekSDKError.swift",
       "kind": "IntegerLiteral",
-      "offset": 6112,
+      "offset": 7301,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekSDKError.swift",
       "kind": "IntegerLiteral",
-      "offset": 6142,
+      "offset": 7331,
       "length": 4,
       "value": "1001"
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekSDKError.swift",
       "kind": "IntegerLiteral",
-      "offset": 6177,
+      "offset": 7366,
       "length": 4,
       "value": "1002"
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekSDKError.swift",
       "kind": "IntegerLiteral",
-      "offset": 6210,
+      "offset": 7399,
       "length": 4,
       "value": "1003"
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekSDKError.swift",
       "kind": "IntegerLiteral",
-      "offset": 6238,
+      "offset": 7427,
       "length": 4,
       "value": "1004"
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekSDKError.swift",
       "kind": "IntegerLiteral",
-      "offset": 6277,
+      "offset": 7466,
       "length": 4,
       "value": "1005"
+    },
+    {
+      "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekSDKError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7576,
+      "length": 4,
+      "value": "2001"
+    },
+    {
+      "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekSDKError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7627,
+      "length": 4,
+      "value": "2002"
+    },
+    {
+      "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekSDKError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7678,
+      "length": 4,
+      "value": "2003"
+    },
+    {
+      "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekSDKError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7730,
+      "length": 4,
+      "value": "2004"
+    },
+    {
+      "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekSDKError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7778,
+      "length": 4,
+      "value": "2005"
+    },
+    {
+      "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekSDKError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7833,
+      "length": 4,
+      "value": "2006"
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekTokenProvider.swift",
@@ -5370,90 +8140,97 @@
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekVRCardReader.swift",
       "kind": "IntegerLiteral",
       "offset": 1418,
-      "length": 3,
-      "value": "300"
+      "length": 5,
+      "value": "14400"
+    },
+    {
+      "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekVRCardReader.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2818,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekVRCardReader.swift",
       "kind": "StringLiteral",
-      "offset": 39487,
+      "offset": 41561,
       "length": 3,
       "value": "\"-\""
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekVRCardReader.swift",
       "kind": "StringLiteral",
-      "offset": 39498,
+      "offset": 41572,
       "length": 3,
       "value": "\"+\""
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekVRCardReader.swift",
       "kind": "StringLiteral",
-      "offset": 39545,
+      "offset": 41619,
       "length": 3,
       "value": "\"_\""
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekVRCardReader.swift",
       "kind": "StringLiteral",
-      "offset": 39556,
+      "offset": 41630,
       "length": 3,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekVRCardReader.swift",
       "kind": "IntegerLiteral",
-      "offset": 39628,
+      "offset": 41702,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekVRCardReader.swift",
       "kind": "IntegerLiteral",
-      "offset": 39633,
+      "offset": 41707,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekVRCardReader.swift",
       "kind": "IntegerLiteral",
-      "offset": 39638,
+      "offset": 41712,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekVRCardReader.swift",
       "kind": "StringLiteral",
-      "offset": 39650,
+      "offset": 41724,
       "length": 3,
       "value": "\"=\""
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekVRCardReader.swift",
       "kind": "IntegerLiteral",
-      "offset": 39667,
+      "offset": 41741,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekVRCardReader.swift",
       "kind": "Array",
-      "offset": 40049,
+      "offset": 42123,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekVRCardReader.swift",
       "kind": "StringLiteral",
-      "offset": 40261,
+      "offset": 42335,
       "length": 3,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekVRCardReader.swift",
       "kind": "IntegerLiteral",
-      "offset": 40304,
+      "offset": 42378,
       "length": 1,
       "value": "1"
     },
@@ -5484,6 +8261,13 @@
       "offset": 5335,
       "length": 9,
       "value": "4"
+    },
+    {
+      "filePath": "\/Users\/xavierdeleon\/Documents\/SourceCode\/VirtualReader framework\/TTOPReader\/MagTekVRCardReader\/MagTekVRCardReaderMagTekVRCardReader+StoreAndForward.swift",
+      "kind": "IntegerLiteral",
+      "offset": 14555,
+      "length": 1,
+      "value": "0"
     }
   ]
 }
